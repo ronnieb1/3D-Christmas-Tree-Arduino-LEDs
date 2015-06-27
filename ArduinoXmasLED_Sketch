@@ -1,0 +1,111 @@
+/*
+Our Christmas Tree project for 2014
+*/
+ 
+//Activate pins. RGB LEDS using pins 11, 10, 9. Whilte LEDs using pins 7, 6, 5, 4, 3
+
+int redPin = 11;
+int greenPin = 10;
+int bluePin = 9;
+int roriPin7 = 7;  
+int roriPin6 = 6;
+int roriPin5 = 5;
+int dadPin4 = 4;
+int dadPin3 = 3;
+int dadPin2 = 2;
+ 
+void setup()
+{
+  pinMode(redPin, OUTPUT);    //RGB
+  pinMode(greenPin, OUTPUT);  //RGB
+  pinMode(bluePin, OUTPUT);   //RGB
+  pinMode(roriPin7, OUTPUT);  //Rori's White LED  
+  pinMode(roriPin6, OUTPUT);  //Rori's White LED    
+  pinMode(roriPin5, OUTPUT);  //Rori's White LED  
+  pinMode(dadPin4, OUTPUT);   //Dad's White LED  
+  pinMode(dadPin3, OUTPUT);   //Dad's White LED  
+  pinMode(dadPin2, OUTPUT);   //Dad's White LED 
+}
+ 
+void loop()
+{
+  // Rainbow colors
+  setColor(255, 0, 0);  // red
+  delay(100);
+  setColor(255, 69, 0);  // orange
+  delay(100);
+  setColor(255, 255, 0);  // yellow
+  delay(100);
+  setColor(0, 100, 0);  // green
+  delay(100);  
+  setColor(0, 191, 255);  // blue
+  delay(100);
+  setColor(132, 112, 255);  // indigo
+  delay(100);
+  setColor(148, 0, 211);  // violet
+  delay(100);
+  
+  /* if code is here. ligths go in sequence from RGB to Pin7 + 1
+  digitalWrite(whitePin7, HIGH);   // White LED On pin 7
+  delay(500);                     // wait for delay. 1000 = 1s
+  digitalWrite(whitePin7, LOW);    // Off
+  delay(500);                     // wait for delay. 1000 = 1s
+  
+  digitalWrite(whitePin6, HIGH);   // White LED On pin 6
+  delay(500);                     // wait for delay. 1000 = 1s
+  digitalWrite(whitePin6, LOW);    // Off
+  delay(500);                     // wait for delay. 1000 = 1s
+  */
+
+}
+
+ 
+void setColor(int red, int green, int blue)
+{
+  #ifdef COMMON_ANODE
+    red = 255 - red;
+    green = 255 - green;
+    blue = 255 - blue;
+  #endif
+  analogWrite(redPin, red);     //RGB
+  analogWrite(greenPin, green); //RGB
+  analogWrite(bluePin, blue);   //RGB
+  
+
+  digitalWrite(roriPin7, HIGH);   // White LED On pin 7
+  delay(100);                     // wait for delay. 1000 = 1s
+  digitalWrite(roriPin7, LOW);    // Off
+  delay(100);                     // wait for delay. 1000 = 1s
+  
+  digitalWrite(roriPin6, HIGH);   // White LED On pin 6
+  delay(100);                     // wait for delay. 1000 = 1s
+  digitalWrite(roriPin6, LOW);    // Off
+  delay(100);                     // wait for delay. 1000 = 1s
+  
+  digitalWrite(roriPin5,HIGH);     // White LED On pin 6
+  delay(100);                      // wait for delay. 1000 = 1s
+  digitalWrite(roriPin5,LOW);      // Off
+  delay(100);                      // wait for delay. 1000 = 1s
+  
+  digitalWrite(dadPin4,HIGH);     // White LED On pin 6
+  delay(100);                      // wait for delay. 1000 = 1s
+  digitalWrite(dadPin4,LOW);      // Off
+  delay(100);                      // wait for delay. 1000 = 1s
+
+  digitalWrite(dadPin3,HIGH);     // White LED On pin 6
+  delay(100);                      // wait for delay. 1000 = 1s
+  digitalWrite(dadPin3,LOW);      // Off
+  delay(100);   
+
+  digitalWrite(dadPin2,HIGH);      // White LED On pin 6
+  delay(100);                      // wait for delay. 1000 = 1s
+  digitalWrite(dadPin2,LOW);       // Off
+  delay(100); 
+  
+  /* 
+  Ho ho ho. Merry Christmas. This is our first program
+  Rori & Dad
+  */
+
+}
+
