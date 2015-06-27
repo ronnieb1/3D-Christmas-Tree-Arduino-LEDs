@@ -45,7 +45,7 @@ void loop()
   setColor(148, 0, 211);  // violet
   delay(100);
   
-  /* if code is here. ligths go in sequence from RGB to Pin7 + 1
+  /* if code is here. lights go in sequence from RGB to Pin7 + 1
   digitalWrite(whitePin7, HIGH);   // White LED On pin 7
   delay(500);                     // wait for delay. 1000 = 1s
   digitalWrite(whitePin7, LOW);    // Off
